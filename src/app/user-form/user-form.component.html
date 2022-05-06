@@ -1,0 +1,13 @@
+<div class="form">
+
+    <form (submit)="createUser()">
+
+        <input type="text" placeholder="Name" name="name" [(ngModel)]="userForm.name">
+        <input type="number" placeholder="Age" name="age" [(ngModel)]="userForm.age">
+        <input type="text" placeholder="Nationality" name="nationality" [(ngModel)]="userForm.nationality">
+
+        <button type="submit">Create User</button>
+
+    </form>
+
+</div>

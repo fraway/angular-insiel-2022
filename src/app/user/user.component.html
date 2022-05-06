@@ -1,0 +1,14 @@
+<div class="user">
+    <h4>{{ name }}</h4>
+    <small>Età: {{ age }}</small>
+    <br>
+    <strong *ngIf="isMaggiorenne()">Utente maggiorenne</strong>
+    <br>
+
+    <div [ngSwitch]="nationality">
+        <span *ngSwitchCase="'it'">🇮🇹</span>
+        <span *ngSwitchCase="'fr'">🇫🇷</span>
+
+        <strong *ngSwitchDefault>unknown</strong>
+    </div>
+</div>

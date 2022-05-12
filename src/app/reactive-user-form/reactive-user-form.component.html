@@ -1,0 +1,87 @@
+<div class="form">
+
+    <form [formGroup]="userForm" (submit)="createUser()">
+
+        <div>
+            <input type="text" placeholder="Name" formControlName="name">
+            <p *ngIf="nameControl?.invalid">
+                <span *ngIf="nameControl?.hasError('required')">
+                    Questo campo è richiesto.
+                </span>
+
+                <span *ngIf="nameControl?.hasError('minlength')">
+                    {{ nameControl?.getError('minlength').actualLength }} / {{
+                    nameControl?.getError('minlength').requiredLength }}
+                </span>
+            </p>
+        </div>
+
+
+        <div>
+            <input type="number" placeholder="Age" formControlName="age">
+            <p *ngIf="userForm.get('age')?.invalid">
+                {{ userForm.get('age')?.errors | json }}
+            </p>
+        </div>
+
+
+        <div>
+            <input type="text" placeholder="Nationality" formControlName="nationality">
+            <p *ngIf="userForm.get('nationality')?.invalid">
+                {{ userForm.get('nationality')?.errors | json }}
+            </p>
+        </div>
+
+        <div>
+            <input type="text" placeholder="Current Country" formControlName="currentCountry">
+            <p *ngIf="userForm.get('currentCountry')?.invalid">
+                {{ userForm.get('currentCountry')?.errors | json }}
+            </p>
+        </div>
+
+        <div>
+            <input type="text" placeholder="Years of Experience" formControlName="yearsOfExperience">
+            <p *ngIf="userForm.get('yearsOfExperience')?.invalid">
+                {{ userForm.get('yearsOfExperience')?.errors | json }}
+            </p>
+        </div>
+
+        <div formArrayName="addresses">
+            <button type="button" [disabled]="canAddAddress()" (click)="addAddress()">Add
+                Address</button>
+
+            <div style="padding: 16px" [formGroup]="control" *ngFor="let control of addressFormGroups">
+                <div>
+                    <input type="text" placeholder="Street" formControlName="street">
+                    <p *ngIf="userForm.get('street')?.invalid">
+                        {{ userForm.get('street')?.errors | json }}
+                    </p>
+                </div>
+                <div>
+                    <input type="text" placeholder="Zip Code" formControlName="zipCode">
+                    <p *ngIf="userForm.get('zipCode')?.invalid">
+                        {{ userForm.get('zipCode')?.errors | json }}
+                    </p>
+                </div>
+                <div>
+                    <input type="text" placeholder="City" formControlName="city">
+                    <p *ngIf="userForm.get('city')?.invalid">
+                        {{ userForm.get('city')?.errors | json }}
+                    </p>
+                </div>
+
+                <button type="button" (click)="removeAddress(control)">Remove</button>
+            </div>
+
+            <strong *ngIf="addressesControl.invalid">
+                {{ addressesControl.errors | json }}
+            </strong>
+
+        </div>
+
+
+        <button type="submit" [disabled]="userForm.invalid">Create User</button>
+
+    </form>
+
+</div>

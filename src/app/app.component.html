@@ -1,16 +1,28 @@
-<!-- {{ newContent }}
-<hr>
+<div class="container p-2">
 
-{{ counter }}
-<hr>
+    <div class="col">
 
-<button (click)="increase()">Increase counter</button>
-<button (click)="decrease()">Decrease counter</button> -->
+        <app-navigation></app-navigation>
 
-<!-- <hr> -->
+    </div>
 
-<app-user-form (onUserCreated)="updateUserList($event)"></app-user-form>
+</div>
 
-<br>
+<div class="container m-5">
 
-<app-user [name]="user.name" [age]="user.age" [nationality]="user.nationality" *ngFor="let user of users"></app-user>
+    <div class="col">
+
+        <!-- <app-search></app-search> -->
+
+        <!-- <hr> -->
+
+        <app-reactive-user-form></app-reactive-user-form>
+
+        <!-- <br> -->
+
+        <!-- <app-user [name]="user.name" [age]="user.age" [nationality]="user.nationality" *ngFor="let user of users"> -->
+        <!-- </app-user> -->
+
+    </div>
+
+</div>

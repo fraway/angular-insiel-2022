@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { inject } from '@angular/core/testing';
+import { Subscriber, Subscription, tap } from 'rxjs';
+import { AuthRxService } from '../services/auth-rx.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -7,7 +10,9 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-  constructor(private _auth: AuthService) { }
+  isLoggedIn$ = this._auth.isLoggedIn$;
+
+  constructor(private _auth: AuthRxService) { }
 
   ngOnInit(): void {
   }
@@ -18,9 +23,5 @@ export class NavigationComponent implements OnInit {
 
   logout() {
     this._auth.logout();
-  }
-
-  get isLoggedIn() {
-    return this._auth.isLoggedIn;
   }
 }

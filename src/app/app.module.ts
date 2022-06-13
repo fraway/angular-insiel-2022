@@ -9,6 +9,11 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { ReactiveUserFormComponent } from './reactive-user-form/reactive-user-form.component';
 import { SearchComponent } from './search/search.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { BankAccountComponent } from './bank-account/bank-account.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,18 @@ import { NavigationComponent } from './navigation/navigation.component';
     UserFormComponent,
     ReactiveUserFormComponent,
     SearchComponent,
-    NavigationComponent
+    NavigationComponent,
+    BankAccountComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

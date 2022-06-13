@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col text-center">
+        <h1>{{ balance$ | async }}$</h1>
+    </div>
+</div>
+
+
+<div class="row mt-5">
+    <div class="col">
+
+        <ng-container *ngIf="(operation$ | async) as operation">
+
+            <strong *ngIf="operation.state == 'loading'">In progress...</strong>
+
+            <strong *ngIf="operation.state == 'success'" class="text-info">Success!</strong>
+
+            <strong *ngIf="operation.state == 'error'" class="text-danger">!! Failure !!</strong>
+        </ng-container>
+
+        <form [formGroup]="depositForm" (submit)="deposit()">
+
+            <input type="number" formControlName="value" />
+
+            <button class="btn btn-primary">Deposit</button>
+
+        </form>
+    </div>
+
+
+    <div class="col">
+        <form [formGroup]="withdrawForm" (submit)="withdraw()">
+
+            <input type="number" formControlName="value" />
+
+            <button class="btn btn-primary">Withdraw</button>
+
+        </form>
+    </div>
+</div>

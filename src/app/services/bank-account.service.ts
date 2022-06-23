@@ -17,18 +17,19 @@ export class BankAccountService {
 
   deposit(value: number) {
 
-    this.store.dispatch(new StartDepositOperationAction(value));
+    // this.store.dispatch(new StartDepositOperationAction(value));
 
-    setTimeout(() => {
-      this.store.dispatch(new DepositAction(value))
-      this.store.dispatch(new DepositOperationSuccessAction());
+    // setTimeout(() => {
+    //   this.store.dispatch(new DepositAction(value))
+    //   this.store.dispatch(new DepositOperationSuccessAction());
 
-      setTimeout(() => {
-        this.store.dispatch(new DepositOperationIdleAction());
-      }, 2000);
+    //   setTimeout(() => {
+    //     this.store.dispatch(new DepositOperationIdleAction());
+    //   }, 2000);
 
-    }, 1000);
+    // }, 1000);
 
+    this.store.dispatch(new StartDepositOperationAction(value))
   }
 
   withdraw(value: number) {

@@ -3,82 +3,82 @@ import { DepositOperation, depositOperationStates } from ".";
 import { BalanceActionType } from "./balance.reducer";
 
 const initialState: DepositOperation = {
-    amount: 0,
-    state: 'idle'
+  amount: 0,
+  state: 'idle'
 }
 
 export function depositOperationReducer(state = initialState, action: Action): DepositOperation {
 
-    switch (action.type) {
+  switch (action.type) {
 
-        case DepositOperationActionType.Start:
-            const startDepositOperationAction = action as StartDepositOperationAction;
+    case DepositOperationActionType.Start:
+      const startDepositOperationAction = action as StartDepositOperationAction;
 
-            const newState: DepositOperation = {
-                ...state,
-                amount: startDepositOperationAction.amount,
-                state: 'loading',
-                error: undefined
-            };
+      const newState: DepositOperation = {
+        ...state,
+        amount: startDepositOperationAction.amount,
+        state: 'loading',
+        error: undefined
+      };
 
-            return newState;
+      return newState;
 
-        case BalanceActionType.Deposit:
-            return {
-                ...state,
-                state: 'success',
-                error: undefined
-            };
+    // case BalanceActionType.Deposit:
+    //     return {
+    //         ...state,
+    //         state: 'success',
+    //         error: undefined
+    //     };
 
-        // case DepositOperationActionType.Success:
-        //     return {
-        //         ...state,
-        //         state: 'success',
-        //         error: undefined
-        //     };
+    case DepositOperationActionType.Success:
+      return {
+        ...state,
+        state: 'success',
+        error: undefined
+      };
 
-        case DepositOperationActionType.Error:
-            const errorAction = action as DepositOperationErrorAction;
-            return {
-                ...state,
-                state: 'error',
-                error: errorAction.cause
-            };
+    case DepositOperationActionType.Error:
+      const errorAction = action as DepositOperationErrorAction;
+      return {
+        ...state,
+        state: 'error',
+        error: errorAction.cause
+      };
 
-        case DepositOperationActionType.Idle:
-            return {
-                ...initialState
-            }
+    case DepositOperationActionType.Idle:
+      return {
+        ...initialState
+      }
 
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 
 }
 
 export class StartDepositOperationAction implements Action {
-    type = DepositOperationActionType.Start;
+  type = DepositOperationActionType.Start;
 
-    constructor(public amount: number) { }
+  constructor(public amount: number) { }
 }
 
 export class DepositOperationSuccessAction implements Action {
-    type = DepositOperationActionType.Success;
+  type = DepositOperationActionType.Success;
 }
 
 export class DepositOperationIdleAction implements Action {
-    type = DepositOperationActionType.Idle;
+  type = DepositOperationActionType.Idle;
 }
 
 export class DepositOperationErrorAction implements Action {
-    type = DepositOperationActionType.Error;
+  type = DepositOperationActionType.Error;
 
-    constructor(public cause: string) { }
+  constructor(public cause: string) { }
 }
 
-enum DepositOperationActionType {
-    Start = '[Home Page] Start Deposit',
-    Success = '[Home Page] Deposit Success',
-    Error = '[Home Page] Deposit Error',
-    Idle = '[Home Page] Deposit Idle',
+export enum DepositOperationActionType {
+  Start = '[Home Page] Start Deposit',
+  Success = '[Home Page] Deposit Success',
+  Error = '[Home Page] Deposit Error',
+  Idle = '[Home Page] Deposit Idle',
 }

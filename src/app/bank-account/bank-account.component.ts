@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../reducers';
 import { BankAccountService } from '../services/bank-account.service';
@@ -17,7 +17,7 @@ export class BankAccountComponent implements OnInit {
   operation$ = this.store.select('depositOperation')
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private _bankAccount: BankAccountService,
     private store: Store<AppState>
   ) { }

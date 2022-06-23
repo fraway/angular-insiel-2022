@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { catchError, debounceTime, of, switchMap, tap } from 'rxjs';
 
 @Component({
@@ -10,7 +10,7 @@ import { catchError, debounceTime, of, switchMap, tap } from 'rxjs';
 })
 export class SearchComponent implements OnInit {
 
-  searchControl = new FormControl();
+  searchControl = new UntypedFormControl();
 
   constructor(private client: HttpClient) { }
 

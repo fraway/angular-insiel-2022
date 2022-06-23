@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormArray, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { nationalityControl, useAllowedValuesValidator } from '../form-controls';
 import { AuthService } from '../services/auth.service';
 
@@ -12,24 +12,24 @@ export class ReactiveUserFormComponent implements OnInit {
 
   private maxAddressLength = 2;
 
-  userForm = new FormGroup({
-    name: new FormControl('', [
+  userForm = new UntypedFormGroup({
+    name: new UntypedFormControl('', [
       Validators.required,
       Validators.minLength(5)
     ]),
-    age: new FormControl(18, [
+    age: new UntypedFormControl(18, [
       Validators.required,
       Validators.min(18)
     ]),
     nationality: nationalityControl(),
-    currentCountry: new FormControl('', [
+    currentCountry: new UntypedFormControl('', [
       useAllowedValuesValidator(['it', 'fr'])
     ]),
-    yearsOfExperience: new FormControl(0, [
+    yearsOfExperience: new UntypedFormControl(0, [
       useAllowedValuesValidator([1, 2, 3, 4, 5, 6])
     ]),
 
-    addresses: new FormArray([], [
+    addresses: new UntypedFormArray([], [
       Validators.maxLength(this.maxAddressLength)
     ]),
   });
@@ -46,10 +46,10 @@ export class ReactiveUserFormComponent implements OnInit {
 
   addAddress() {
     const addresses = this.addressesControl;
-    addresses.push(new FormGroup({
-      street: new FormControl(''),
-      zipCode: new FormControl(0),
-      city: new FormControl('')
+    addresses.push(new UntypedFormGroup({
+      street: new UntypedFormControl(''),
+      zipCode: new UntypedFormControl(0),
+      city: new UntypedFormControl('')
     }));
   }
 
@@ -63,7 +63,7 @@ export class ReactiveUserFormComponent implements OnInit {
     // const nameValue = this.userForm.get('name')?.value;
   }
 
-  removeAddress(c: FormGroup) {
+  removeAddress(c: UntypedFormGroup) {
     const index = this.addressFormGroups.indexOf(c);
     this.addressesControl.removeAt(index);
   }
@@ -76,12 +76,12 @@ export class ReactiveUserFormComponent implements OnInit {
     return this.userForm.get('name');
   }
 
-  get addressesControl(): FormArray {
-    return this.userForm.get('addresses') as FormArray;
+  get addressesControl(): UntypedFormArray {
+    return this.userForm.get('addresses') as UntypedFormArray;
   }
 
-  get addressFormGroups(): FormGroup[] {
-    return this.addressesControl.controls.map((c) => c as FormGroup);
+  get addressFormGroups(): UntypedFormGroup[] {
+    return this.addressesControl.controls.map((c) => c as UntypedFormGroup);
   }
 
 }

@@ -1,4 +1,4 @@
-import { AbstractControl, FormControl, ValidationErrors } from "@angular/forms";
+import { AbstractControl, FormControl, UntypedFormControl, ValidationErrors } from "@angular/forms";
 
 export const nationalityControl = () => new FormControl('', [
   useAllowedValuesValidator(['it', 'en', 'fr', 'de', 'ch'])

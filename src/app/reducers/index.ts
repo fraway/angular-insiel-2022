@@ -6,8 +6,10 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
+import { Event } from '../services/events.service';
 import { balanceReducer } from './balance.reducer';
 import { depositOperationReducer } from './deposit-operation.reducer';
+import { eventsReducer } from './events.reducer';
 
 // 1: simple approach
 // 2: advanced approach with operation status
@@ -23,11 +25,13 @@ export interface DepositOperation {
 export interface AppState {
   balance: number;
   depositOperation: DepositOperation;
+  events: Event[];
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   balance: balanceReducer,
-  depositOperation: depositOperationReducer
+  depositOperation: depositOperationReducer,
+  events: eventsReducer
 };
 
 

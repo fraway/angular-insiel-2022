@@ -1,4 +1,8 @@
 <div class="row">
-    <button class="btn btn-primary" *ngIf="!(isLoggedIn$ | async)" (click)="login()">Login</button>
-    <button class="btn btn-primary" *ngIf="(isLoggedIn$ | async)" (click)="logout()">Logout</button>
+  <a routerLink="/">Home</a>
+  <a routerLink="/bank">Bank</a>
+  <a routerLink="/events">Events</a>
+
+  <button class="btn btn-primary" *ngIf="!(isLoggedIn$ | async)" (click)="login()">Login</button>
+  <button class="btn btn-primary" *ngIf="(isLoggedIn$ | async)" (click)="logout()">Logout</button>
 </div>

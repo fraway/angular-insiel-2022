@@ -1,0 +1,199 @@
+{
+  "events": [
+    {
+      "event": "Navigation End",
+      "url": "/",
+      "id": 1
+    },
+    {
+      "event": "Navigation End",
+      "url": "/",
+      "id": 2
+    },
+    {
+      "event": "Navigation End",
+      "url": "/",
+      "id": 3
+    },
+    {
+      "event": "Navigation End",
+      "url": "/",
+      "id": 4
+    },
+    {
+      "event": "Navigation End",
+      "url": "/",
+      "id": 5
+    },
+    {
+      "event": "Navigation End",
+      "url": "/",
+      "id": 6
+    },
+    {
+      "event": "Navigation End",
+      "url": "/bank",
+      "id": 7
+    },
+    {
+      "event": "Navigation End",
+      "url": "/bank",
+      "id": 8
+    },
+    {
+      "event": "Deposit Success",
+      "amount": 3200,
+      "id": 9
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:44:54.956Z",
+      "url": "/bank",
+      "id": 10
+    },
+    {
+      "event": "Deposit Success",
+      "timestamp": "2022-06-23T09:44:59.392Z",
+      "amount": 32,
+      "id": 11
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:46:38.640Z",
+      "url": "/bank",
+      "id": 12
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:47:09.447Z",
+      "url": "/bank",
+      "id": 13
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:47:37.368Z",
+      "url": "/bank",
+      "id": 14
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:51:04.618Z",
+      "url": "/bank",
+      "id": 15
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:51:11.546Z",
+      "url": "/bank",
+      "id": 16
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:51:12.669Z",
+      "url": "/events",
+      "id": 17
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:52:02.467Z",
+      "url": "/events",
+      "id": 18
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:52:22.990Z",
+      "url": "/events",
+      "id": 19
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:54:53.865Z",
+      "url": "/events",
+      "id": 20
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:54:57.028Z",
+      "url": "/events",
+      "id": 21
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:54:57.922Z",
+      "url": "/events",
+      "id": 22
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:55:02.761Z",
+      "url": "/events",
+      "id": 23
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:55:28.062Z",
+      "url": "/events",
+      "id": 24
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:55:35.028Z",
+      "url": "/events",
+      "id": 25
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T09:55:44.293Z",
+      "url": "/events",
+      "id": 26
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:00:51.980Z",
+      "url": "/events",
+      "id": 27
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:01:36.074Z",
+      "url": "/events",
+      "id": 28
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:03:01.969Z",
+      "url": "/events",
+      "id": 29
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:03:28.707Z",
+      "url": "/events",
+      "id": 30
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:03:59.641Z",
+      "url": "/",
+      "id": 31
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:04:05.078Z",
+      "url": "/events",
+      "id": 32
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:05:31.666Z",
+      "url": "/events",
+      "id": 33
+    },
+    {
+      "event": "Navigation End",
+      "timestamp": "2022-06-23T10:05:35.245Z",
+      "url": "/events",
+      "id": 34
+    }
+  ]
+}

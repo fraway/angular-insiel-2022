@@ -16,6 +16,11 @@ import { environment } from '../environments/environment';
 import { BankAccountComponent } from './bank-account/bank-account.component';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { AnalyticsEffects } from './analytics.effects';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home.component';
+import { routes } from './app.routes';
+import { EventsComponent } from './events.component';
 
 @NgModule({
   declarations: [
@@ -25,18 +30,21 @@ import { AppEffects } from './app.effects';
     ReactiveUserFormComponent,
     SearchComponent,
     NavigationComponent,
-    BankAccountComponent
+    BankAccountComponent,
+    HomeComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects, AnalyticsEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

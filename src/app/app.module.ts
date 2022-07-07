@@ -21,6 +21,14 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { routes } from './app.routes';
 import { EventsComponent } from './events.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthEffects } from './auth.effects';
+import { BankNavigationComponent } from './bank-navigation/bank-navigation.component';
+import { BankCardsComponent } from './bank-cards/bank-cards.component';
+import { BankCommunicationsComponent } from './bank-communications/bank-communications.component';
+import { BankCardDetailComponent } from './bank-card-detail/bank-card-detail.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,19 +40,28 @@ import { EventsComponent } from './events.component';
     NavigationComponent,
     BankAccountComponent,
     HomeComponent,
-    EventsComponent
+    EventsComponent,
+    NotFoundComponent,
+    LoginComponent,
+    BankNavigationComponent,
+    BankCardsComponent,
+    BankCommunicationsComponent,
+    BankCardDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    SharedModule,
+    RouterModule.forRoot(routes, {
+      enableTracing: false
+    }),
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([AppEffects, AnalyticsEffects]),
+    EffectsModule.forRoot([AppEffects, AnalyticsEffects, AuthEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

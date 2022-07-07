@@ -1,0 +1,9 @@
+<app-super-button label="Load all docs" (onClick)="loadDocs()"></app-super-button>
+
+<h3>Articles</h3>
+
+<ul>
+    <li *ngFor="let article of articles$ | async">
+        {{ article }}
+    </li>
+</ul>

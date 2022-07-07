@@ -1,8 +1,11 @@
 <div class="row">
   <a routerLink="/">Home</a>
-  <a routerLink="/bank">Bank</a>
-  <a routerLink="/events">Events</a>
+  <a routerLink="/app/bank">Bank</a>
+  <a routerLink="/app/events">Events</a>
+  <a routerLink="/docs">Docs</a>
 
-  <button class="btn btn-primary" *ngIf="!(isLoggedIn$ | async)" (click)="login()">Login</button>
+  <input type="text" name="username" id="username" [formControl]="usernameControl">
+
+  <a class="btn" *ngIf="!(isLoggedIn$ | async)" routerLink="/login">Login</a>
   <button class="btn btn-primary" *ngIf="(isLoggedIn$ | async)" (click)="logout()">Logout</button>
 </div>

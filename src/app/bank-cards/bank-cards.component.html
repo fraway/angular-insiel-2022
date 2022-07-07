@@ -1,0 +1,22 @@
+<h1>Cards</h1>
+
+<app-super-button label="Load all docs"></app-super-button>
+
+<h4>Your cards</h4>
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">
+        <a [routerLink]="['/app', 'bank', 'cards', 'detail', 1]">Credit Card</a>
+    </li>
+
+    <li class="list-group-item">
+        <a [routerLink]="['/app', 'bank', 'cards', 'detail', 2]">Debit Cards</a>
+    </li>
+</ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
